@@ -1,7 +1,13 @@
-version: '3'
+version: "3"
 services:
-    app:
-        build: ./php
+  app:
+    build: ./php
+    volumes:
+      - ..:/workspace:cached
 
-        volumes:
-            - ..:/workspace:cached
+  web:
+    image: nginx:1.17-alpine
+    depends_on:
+      - app
+    ports: 
+      - 80:80
