@@ -3,8 +3,8 @@ services:
   app:
     build: ./php
     volumes:
-      - ..:/workspace:cached
-      - ../src/:/var/www/html
+      - ..:/workspace:cached  # for VSCode workspace
+      - ../src/:/var/www/html # deploy to web root
 
   web:
     image: nginx:1.17-alpine
