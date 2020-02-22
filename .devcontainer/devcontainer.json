@@ -12,9 +12,8 @@
 		"felixfbecker.php-debug",
 		"felixfbecker.php-intellisense",
 		"lfs.vscode-emacs-friendly"
-	]
+	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "php -v",
