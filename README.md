@@ -13,3 +13,8 @@ Docker for windows を再起動する。
 ```sh
 composer create-project --prefer-dist laravel/laravel backend
 ```
+
+/workspace/backend で以下のコマンドを実行
+```
+php artisan key:generate
+```
