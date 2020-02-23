@@ -37,10 +37,26 @@ RUN apt-get update \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
+# for Laravel installer
+RUN apt update \
+    && apt-get install -y libzip-dev \
+    && docker-php-ext-install zip
+
 # Composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_NO_INTERACTION 1
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
+    #
+    ## Setup composer
+    && composer config -g process-timeout 3600 \
+    && composer config -g repos.packagist composer https://packagist.jp \
+    #
+    # https://github.com/hirak/prestissimo
+    # composer plugin for parallel dowonload
+    && composer global require hirak/prestissimo \
+    #
+    # Laravel
+    && composer global require laravel/installer
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog
