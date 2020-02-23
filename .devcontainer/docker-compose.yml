@@ -3,8 +3,8 @@ services:
   app:
     build: ./php
     volumes:
-      - ..:/workspace:cached  # for VSCode workspace
-      - ../src/:/var/www/html # deploy to web root
+      - ..:/workspace:cached      # for VSCode workspace
+      - ../backend:/var/www/html  # deploy to web root
 
   web:
     image: nginx:1.17-alpine
@@ -13,5 +13,6 @@ services:
     ports: 
       - "8080:80"
     volumes:
+      - ../backend:/var/www/html  # deploy to web root
       - ../logs:/var/log/nginx
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
