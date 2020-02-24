@@ -39,7 +39,7 @@ RUN apt-get update \
 
 # for Laravel installer
 RUN apt update \
-    && apt-get install -y libzip-dev \
+    && apt-get install -y libzip-dev unzip \
     && docker-php-ext-install zip
 
 # Composer
