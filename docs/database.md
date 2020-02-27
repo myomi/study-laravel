@@ -51,13 +51,11 @@ php backend/artisan db:seed
 ```
 
 ### 6. model クラスを作る
+Laravelの標準コマンドだと以下のようになる。
 ```sh
 php backend/artisan make:model Models/User
 ```
-Laravel標準のコマンドだと、1つづつ地道にモデルを作らないといけない。これはやってられないので、自動生成のコマンド [Eloquent Model Generator](https://github.com/krlove/eloquent-model-generator) を導入してまとめて自動生成する。
-
-Eloquent Model Generatorを導入すれば、モデル生成コマンドは以下のようになる
+が、このプロジェクトでは一括モデル自動生成のコマンドを導入しているので、以下のコマンドですべてのモデルが自動生成される
 ```sh
-php backend/artisan krlove:generate:model User --output-path=Models --namespace=App\\Models --table-name=users
+php backend/artisan krlove:generate:all-models
 ```
-これだけだと長いので、 eloquent_model_generator.php に出力先の設定をする。
