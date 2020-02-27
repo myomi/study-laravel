@@ -52,33 +52,3 @@ cd backend
 rm -rf vendor
 composer install
 ```
-
-
-## メモ
-### (1) プロジェクトを作る
-/workspace で以下のコマンドを実行   
-```sh
-composer create-project --prefer-dist laravel/laravel backend
-```
-
-/workspace/backend で以下のコマンドを実行
-```
-php artisan key:generate
-```
-
-### (2) DBマイグレーションを始める
-/workspace で以下のコマンドを実行
-```sh
-# サンプル用のDDLファイルが自動生成されているので消す
-rm -rf backend/database/migrations
-# マイグレーション開始
-php backend/artisan migrate
-```
-これで、以下のマイグレーション管理用テーブルが生成される
-- migrations
-
-### (3) Eloquent Model Generatorをインストール
-```
-cd backend
-composer require krlove/eloquent-model-generator --dev
-```

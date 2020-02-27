@@ -60,3 +60,4 @@ Eloquent Model Generatorを導入すれば、モデル生成コマンドは以�
 ```sh
 php backend/artisan krlove:generate:model User --output-path=Models --namespace=App\\Models --table-name=users
 ```
+これだけだと長いので、 eloquent_model_generator.php に出力先の設定をする。
