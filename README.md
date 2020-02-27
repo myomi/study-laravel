@@ -1,6 +1,7 @@
 # Study Laravel
 ## 使い方
 1. VSCodeのRemote Containerでこのプロジェクトを開く
+
 2. (初回のみ) ターミナルで以下を実行する。
 ```sh
 cd backend
@@ -11,7 +12,18 @@ cp .env.example .env
 # APP keyの生成
 php artisan key:generate
 ```
-3. ブラウザを開き、 http://localhost:8080 にアクセスすると、backend/public/index.php を表示する。
+
+3. backend/.env をVSCodeで開き、DB関連の設定を以下のように変更します。
+```
+DB_CONNECTION=pgsql
+DB_HOST=db
+DB_PORT=5432
+DB_DATABASE=laravel_db
+DB_USERNAME=postgres
+DB_PASSWORD=ZtG*GSdvdT_W
+```
+
+4. ブラウザを開き、 http://localhost:8080 にアクセスすると、backend/public/index.php を表示する。
 
 
 ## PHPプロセスのデバッグ方法
@@ -52,10 +64,10 @@ php artisan key:generate
 ### (2) DBマイグレーションを始める
 /workspace で以下のコマンドを実行
 ```sh
+# サンプル用のDDLファイルが自動生成されているので消す
+rm -rf backend/database/migrations
+# マイグレーション開始
 php backend/artisan migrate
 ```
-これで、以下のテーブルが生成される
+これで、以下のマイグレーション管理用テーブルが生成される
 - migrations
-- users
-- password_resets
-- failed_jobs
