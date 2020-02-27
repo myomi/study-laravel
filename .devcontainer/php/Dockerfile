@@ -43,6 +43,10 @@ RUN apt update \
     && apt-get install -y libzip-dev unzip \
     && docker-php-ext-install zip
 
+# for PHP & PostgreSQL connection
+RUN apt-get install -y libpq-dev \
+    && docker-php-ext-install pdo_pgsql
+
 # Composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_NO_INTERACTION 1
