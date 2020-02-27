@@ -52,3 +52,11 @@ cd backend
 rm -rf vendor
 composer install
 ```
+
+## ドキュメント
+このプロジェクトひな形を使って、アプリケーションを開発するための手順は以下のドキュメントを参照してください。
+
+- [WEB APIの開発方法](./docs/api.md)
+- [Database関連の開発方法](./docs/database.md)
+- [コーディング規約](./docs/coding_conventions.md)
+- [(参考資料)このプロジェクトひな形を作ったときに行った作業メモ](./docs/how_to_create_laravel_project.md)
