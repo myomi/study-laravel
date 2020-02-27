@@ -76,3 +76,9 @@ php backend/artisan migrate
 ```
 これで、以下のマイグレーション管理用テーブルが生成される
 - migrations
+
+### (3) Eloquent Model Generatorをインストール
+```
+cd backend
+composer require krlove/eloquent-model-generator --dev
+```
