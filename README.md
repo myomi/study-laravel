@@ -1,4 +1,16 @@
 # Study Laravel
+## これはなに？
+Laravelを使ったアプリケーション開発のひな形です。
+
+### 必要ツール
+- Docker
+- VSCode (Remote Container機能を利用して開発します)
+
+### 構成
+- PHP7
+- Nginx 1.17
+- PostgreSQL 12.2
+
 ## 使い方
 1. VSCodeのRemote Containerでこのプロジェクトを開く
 
@@ -28,7 +40,8 @@ DB_PASSWORD=ZtG*GSdvdT_W
 php backend/artisan migrate:refresh --seed
 ```
 
-5. ブラウザを開き、 http://localhost:8080 にアクセスすると、backend/public/index.php を表示する。
+5. ブラウザを開き、 http://localhost:8080 にアクセスすると、backend/resources/views/welcome.blade.php を表示する。
+上記のページに加え、 WEB API `GET http://localhost:8080/api/users` も用意している。併せて試してみてください。
 
 
 ## PHPプロセスのデバッグ方法
