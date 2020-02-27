@@ -14,9 +14,9 @@ Laravelを使ったアプリケーション開発のひな形です。
 ## 使い方
 1. VSCodeのRemote Containerでこのプロジェクトを開く
 
-2. (初回のみ) ターミナルで以下を実行する。
+2. (初回のみ) VSCodeターミナルで以下を実行する。
 ```sh
-cd backend
+cd /workspace/backend
 # 依存ライブラリのインストール
 composer install
 # .envファイルを作成する
@@ -25,7 +25,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-3. backend/.env をVSCodeで開き、DB関連の設定を以下のように変更します。
+3. (初回のみ) backend/.env をVSCodeで開き、DB関連の設定を以下のように変更します。
 ```ini
 DB_CONNECTION=pgsql
 DB_HOST=db
@@ -35,8 +35,9 @@ DB_USERNAME=postgres
 DB_PASSWORD=ZtG*GSdvdT_W
 ```
 
-4. 以下のコマンドを実行して、DBのテーブル生成・テスト用データの登録を行います。
+4. (初回のみ) VSCodeターミナルで以下のコマンドを実行して、DBのテーブル生成・テスト用データの登録を行います。
 ```sh
+cd /workspace
 php backend/artisan migrate:refresh --seed
 ```
 
