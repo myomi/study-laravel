@@ -14,7 +14,7 @@ php artisan key:generate
 ```
 
 3. backend/.env をVSCodeで開き、DB関連の設定を以下のように変更します。
-```
+```ini
 DB_CONNECTION=pgsql
 DB_HOST=db
 DB_PORT=5432
@@ -23,7 +23,12 @@ DB_USERNAME=postgres
 DB_PASSWORD=ZtG*GSdvdT_W
 ```
 
-4. ブラウザを開き、 http://localhost:8080 にアクセスすると、backend/public/index.php を表示する。
+4. 以下のコマンドを実行して、DBのテーブル生成・テスト用データの登録を行います。
+```sh
+php backend/artisan migrate:refresh --seed
+```
+
+5. ブラウザを開き、 http://localhost:8080 にアクセスすると、backend/public/index.php を表示する。
 
 
 ## PHPプロセスのデバッグ方法
