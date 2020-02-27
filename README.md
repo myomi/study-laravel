@@ -34,7 +34,7 @@ php backend/artisan migrate:refresh --seed
 ## PHPプロセスのデバッグ方法
 1. VSCodeのデバッグpaneを開く
 2. Listen for XDebug の実行ボタンを押す
-3. デバッグしたい箇所にブレイクポイントをおき、実行
+3. デバッグしたい箇所にブレイクポイントをおき、ブラウザでデバッグしたいページないしはAPIにアクセスする
 
 
 ## トラブルシュート
